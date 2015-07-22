@@ -18,3 +18,15 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def on_finish(self):
         self.db.remove()
+
+
+class NewHandler(BaseHandler):
+    pass
+
+
+class EditHandler(BaseHandler):
+    pass
+
+
+class DeleteHandler(BaseHandler):
+    pass

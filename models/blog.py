@@ -4,7 +4,7 @@ from .base import Base, TimestampMixin
 from .user import RefUserMixin
 
 
-class Entry(Base, TimestampMixin, RefUserMixin):
+class Article(Base, TimestampMixin, RefUserMixin):
     title = Column(String(40), nullable=False)
     body = Column(Text, nullable=False)
 
