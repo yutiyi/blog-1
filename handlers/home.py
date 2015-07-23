@@ -1,4 +1,7 @@
 import tornado.web
+
+from models.blog import Article
+from forms.home import ArticleForm
 from .base import BaseHandler, NewHandler, EditHandler, DeleteHandler
 
 
@@ -9,12 +12,19 @@ class HomeHandler(BaseHandler):
 
 
 class ArticleNewHandler(NewHandler):
-    pass
+    model = Article
+    template_name = 'home/article.html'
+    form_class = ArticleForm
+    success_url_name = 'home'
 
 
 class ArticleEditHandler(EditHandler):
-    pass
+    model = Article
+    template_name = 'home/article.html'
+    form_class = ArticleForm
+    success_url_name = 'home'
 
 
 class ArticleDeleteHandler(DeleteHandler):
-    pass
+    model = Article
+    success_url_name = 'home'

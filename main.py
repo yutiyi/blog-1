@@ -8,6 +8,7 @@ import tornado.options
 from tornado.options import define, options
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+
 from handlers.auth import LoginHandler, RegisterHandler, LogoutHandler
 from handlers.home import HomeHandler
 
@@ -39,7 +40,6 @@ class Application(tornado.web.Application):
         super(Application, self).__init__(handlers, **settings)
 
 def init_db(engine):
-    import models
     from models.base import Base
     Base.metadata.create_all(bind=engine)
 

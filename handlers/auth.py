@@ -1,7 +1,6 @@
 from .base import BaseHandler
 from forms.auth import LoginForm, RegisterForm
 from models.user import User
-import datetime
 
 
 class LoginHandler(BaseHandler):

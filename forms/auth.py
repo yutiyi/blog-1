@@ -1,6 +1,8 @@
-from .base import BaseForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, Email, Length
+
+from .base import BaseForm
+
 
 class LoginForm(BaseForm):
     email = StringField('邮箱', validators=[DataRequired(), Email()])
