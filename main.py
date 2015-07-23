@@ -40,6 +40,7 @@ class Application(tornado.web.Application):
         super(Application, self).__init__(handlers, **settings)
 
 def init_db(engine):
+    import models
     from models.base import Base
     Base.metadata.create_all(bind=engine)
 
